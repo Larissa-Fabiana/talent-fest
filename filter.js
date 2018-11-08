@@ -4,6 +4,7 @@ function filterPosts() {
   filter.map(word => {
     if (newPost.match(new RegExp(word))) {
       alert('PROIBIDO');
+      $(".add-post-input").val("");
     } else {
       $('.add-posts').show();
     }
