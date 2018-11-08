@@ -89,3 +89,15 @@ $('.log-out').click(function() {
     alert(error.message);
   });
 })
+
+function readImage(input) {
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    $('.posts-list').prepend(`
+    <div class="post-box">
+      <img src="${e.target.result}"/>
+    </div>
+    `);
+  };
+  reader.readAsDataURL(input.files[0]); 
+}
