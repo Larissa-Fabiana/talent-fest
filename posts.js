@@ -2,6 +2,8 @@ var database = firebase.database();
 var USER_ID = window.location.search.match(/\?id=(.*)/)[1];
 
 $(document).ready(function() {
+  $('.add-posts').hide();
+  $('.add-post-input').keyup(filterPosts);
   getPostsFromDB();
   $(".add-posts").click(addPostsClick);
   userInfo();
