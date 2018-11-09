@@ -1,4 +1,5 @@
 var database = firebase.database();
+console.log('oi');
 
 $(document).ready(function() {
   $(".sign-up-button").click(signUpClick);

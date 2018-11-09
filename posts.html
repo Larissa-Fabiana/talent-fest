@@ -54,6 +54,7 @@
       <textarea class="add-post-input" placeholder="Escreva uma postagem"></textarea>
       <button type="button" class="btn font-weight-bold mt-2 add-posts">Postar</button>
       <button type="button" class="btn font-weight-bold mt-2 add-image" data-toggle="modal" data-target="#imageModal">Enviar imagem</button>
+      <button type="button" class="btn font-weight-bold mt-2 add-video" data-toggle="modal" data-target="#videoModal">Enviar vídeo</button>
     </div>
 
     <img src="images/newadds.png" class="m-3" height="548px"/>
@@ -79,6 +80,27 @@
       </div>
     </div>
   </div>
+
+  <!-- Videos Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Postar vídeo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="file" onchange="readVideo(this)" id="video" accept="video/mp4, video/mov"/>
+            <div class="modal-video"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn post-video">Postar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- Alert Modal Textos -->
   <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

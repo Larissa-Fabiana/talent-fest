@@ -113,6 +113,26 @@ function readImage(input) {
   reader.readAsDataURL(input.files[0]); 
 }
 
+function readVideo(input) {
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    filterVideos();
+
+    $('.modal-video').prepend(`
+      <video src="${e.target.result}" controls/>
+    `);
+    $('.post-video').click(function() {
+      $('.posts-section').append(`
+        <div class="post-box">
+          <video src="${e.target.result}" controls/>
+        </div>
+      `);
+      closeModals();
+    })
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+
 function closeModals() {
   return $('.modal').modal('hide');
 }
