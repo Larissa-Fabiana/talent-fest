@@ -139,7 +139,7 @@ textarea:focus {
 
 .add-posts, 
 .explore-user-box button,
-.add-images {
+.add-image {
   cursor: pointer;
   font-size: 15px;
   background-color: #54B8FF;

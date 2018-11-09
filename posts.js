@@ -95,11 +95,24 @@ $('.log-out').click(function() {
 function readImage(input) {
   const reader = new FileReader();
   reader.onload = function (e) {
-    $('.posts-list').prepend(`
-    <div class="post-box">
-      <img src="${e.target.result}"/>
-    </div>
+    filterImages();
+
+    $('.modal-image').prepend(`
+      <img class="imagem" src="${e.target.result}"/>
     `);
+    $('.post-image').click(function() {
+      $('.posts-list').prepend(`
+        <div class="post-box">
+          <img src="${e.target.result}"/>
+        </div>
+      `);
+      closeModals();
+    })
   };
   reader.readAsDataURL(input.files[0]); 
 }
+
+function closeModals() {
+  return $('.modal').modal('hide');
+}
+
