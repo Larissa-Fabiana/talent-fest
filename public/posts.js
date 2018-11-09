@@ -37,8 +37,8 @@ function getPostsFromDB() {
 }
 
 function createListItem(text, key) {
-  $(".posts-section").append(`
-    <div class="post-box mt-5">
+  $(".posts-list").prepend(`
+    <div class="post-box">
       <div class="post-box-header"><span class="current-user-name"></span></div>
       <div class="post-box-main">
         <i class="fas fa-user-circle fa-4x text-secondary mr-3"></i>
@@ -76,7 +76,6 @@ function userInfo() {
     var userName = snapshot.val().name;
     var userEmail = snapshot.val().email;
     $('.username').html('<i class="fas fa-user"></i> ' + userName + ' <small>(' + userEmail + ')</small>');
-    $('.name').html(userName);
     $('.current-user-name').html('Postado por: ' + userName + '<small> (SEU PERFIL)</small>');
   });
 }
@@ -102,8 +101,7 @@ function readImage(input) {
       <img class="imagem" src="${e.target.result}"/>
     `);
     $('.post-image').click(function() {
-
-      $('.posts-section').append(`
+      $('.posts-list').prepend(`
         <div class="post-box">
           <img src="${e.target.result}"/>
         </div>
@@ -112,26 +110,6 @@ function readImage(input) {
     })
   };
   reader.readAsDataURL(input.files[0]); 
-}
-
-function readVideo(input) {
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    filterVideos();
-
-    $('.modal-video').prepend(`
-      <video src="${e.target.result}" controls/>
-    `);
-    $('.post-video').click(function() {
-      $('.posts-section').append(`
-        <div class="post-box">
-          <video src="${e.target.result}" controls/>
-        </div>
-      `);
-      closeModals();
-    })
-  };
-  reader.readAsDataURL(input.files[0]);
 }
 
 function closeModals() {
