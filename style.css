@@ -3,6 +3,7 @@ body {
   font-family: "Helvetica Neue LT Std";
   width: 100%;
   height: 100%;
+  background-color: whitesmoke;
 }
 
 #fade-initial-page , #main-page {
@@ -11,8 +12,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
-  color: white;
+  /* background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%); */
+  color: grey;
 }
 
 #fade-initial-page , #main-page {
@@ -29,8 +30,18 @@ body {
   font-size: 50px;
 }
 
-#main-page {
-  display: none;
+.inova-logo {
+  background-image: url(images/inovabra.png);
+  background-size: cover;
+  height: 53vh;
+  width: 58vw;
+  margin-right: 40px;
+}
+
+.timeline {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 8px;
 }
 
 #main-page h1 {
@@ -38,10 +49,21 @@ body {
   font-size: 30px;
 }
 
+.form {
+  border: 1px solid #CC092F;
+  padding: 40px;
+}
+
+.search-input {
+  background-color: #CC092F;
+  width: 15%;
+  color: white;
+}
+
 .sign-in-email , .sign-in-password , .sign-up-name , .sign-up-email , .sign-up-password {
   outline: none;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #CC092F;
 }
 
 .sign-in-email:focus , .sign-in-password:focus {
@@ -50,10 +72,10 @@ body {
 
 .sign-in-button , .sign-up-button {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #CC092F;
   border-radius: 15px;
   cursor: pointer;
-  color: white;
+  color: grey;
 }
 
 .sign-in-button:hover , .sign-up-button:hover {
@@ -62,7 +84,7 @@ body {
 }
 
 .modal-content {
-  background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+  background-color: #F5F5F5;
 }
 
 .sign-up-name:focus , .sign-up-email:focus , .sign-up-password:focus {
@@ -76,7 +98,7 @@ small span {
 #posts-page , #explore-page {
   display: flex;
   flex-direction: column;
-  background-color: #ABDCFF;
+  background-color: whitesmoke;
   color: #616161;
 }
 
@@ -102,7 +124,7 @@ small span {
 }
 
 .bg-collapse {
-  background-color: #ABDCFF;
+  background-color: #CC092F;
 }
 
 .log-out {
@@ -113,45 +135,57 @@ small span {
 }
 
 .form-posts {
+  width: 100%;
+  border-bottom: 1px solid #cfcfcf;
   display: flex;
-  margin: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  height: auto;
-  border-bottom: 1px solid white;
+  flex-direction: column;
+  height: 200px;
 }
 
 textarea {
   font-family: "Helvetica Neue LT Std";
   font-size: 13px;
-  border-radius: 4px;
-  border: 1px solid #9BD1D3;
+  border: 1px solid #cfcfcf;
   background-color: white;
-  height: auto;
   width: 100%;
-  padding: 10px;
+  padding: 3%;
   resize: none;
+  height: 30%;
 }
 
 textarea:focus {
   border: 1px solid #9BD1D3;
 }
 
+.user-box {
+  border: 1px solid #cfcfcf;
+  background-color: white;
+  padding: 3%;
+  height: 30%;
+}
+
 .add-posts, 
 .explore-user-box button,
-.add-image {
+.add-image,
+.post-image,
+.btn-dissmiss {
   cursor: pointer;
   font-size: 15px;
-  background-color: #54B8FF;
+  border: 1px solid #CC092F;
+  padding: 8px;
+  color: #CC092F;
+  background-color: transparent;
 }
+
 
 .post-box {
   background-color: white;
   border-radius: 4px;
-  border: 1px solid #9BD1D3;
+  border: 1px solid #cfcfcf;
   font-size: 13px;
   margin: 10px;
   text-align: center;
+  width: 100%;
 }
 
 .post-box-header {
@@ -164,6 +198,7 @@ textarea:focus {
 }
 
 .post-box-main {
+  background-color: white;
   display: flex;
   text-align: left;
   padding: 15px;
@@ -181,7 +216,7 @@ textarea:focus {
   background-color: transparent;
   border: none;
   outline: none;
-  color: #54B8FF;
+  color: #CC092F;
   font-weight: bold;
   cursor: pointer;
 }
@@ -205,4 +240,16 @@ textarea:focus {
   display: flex;
   justify-content: space-evenly;
   color: #9E9E9E;
+}
+ 
+.div-post{
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.div-post{
+  height: 250px;
 }

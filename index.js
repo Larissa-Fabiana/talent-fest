@@ -1,15 +1,9 @@
 var database = firebase.database();
 
 $(document).ready(function() {
-  fadePage();
   $(".sign-up-button").click(signUpClick);
   $(".sign-in-button").click(signInClick);
 });
-
-function fadePage() {
-  $('#fade-initial-page').delay('2000').fadeOut('slow');
-  $('#main-page').delay('2000').fadeIn('slow');
-}
 
 function signUpClick(event) {
   event.preventDefault();

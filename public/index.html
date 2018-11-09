@@ -10,7 +10,17 @@
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-database.js"></script>
-  <script src="firebase-config.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyAcZmBL5hRZaPYzoqacpxFZzRJl2oEbiy4",
+      authDomain: "talent-fest-bradesco.firebaseapp.com",
+      databaseURL: "https://talent-fest-bradesco.firebaseio.com",
+      projectId: "talent-fest-bradesco",
+      storageBucket: "",
+      messagingSenderId: "982320024984"
+    };
+    firebase.initializeApp(config);
+  </script>
   <link rel="stylesheet" type="text/css" media="screen" href="Fontes/HelveticaNeue/helvetica-neue.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> 

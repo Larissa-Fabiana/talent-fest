@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TALENT FEST: Newsfeed</title>
+  <title>Inovabra Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-4.1.3-dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
@@ -19,36 +19,92 @@
   <div class="pos-f-t">
     <div class="collapse" id="navbarToggleExternalContent">
       <div class="bg-collapse p-4">
-        <h4 class="username font-weight-bold"></h4>
-        <span class="text-muted">
-          <button class="log-out mb-4"><i class="fas fa-sign-out-alt"></i> Sair</button><br>
-          <button class="bg-transparent newsfeed">Newsfeed</button><br>
-          <button class="bg-transparent explore">Explorar</button>
+        <h4 class="username font-weight-bold text-white"></h4>
+        <span class="text-muted text-white">
+          <button class="log-out mb-4 text-white"><i class="fas fa-sign-out-alt"></i> Sair</button>
         </span>
       </div>
     </div>
     <nav class="navbar navbar-light bg-collapse">
-      TALENT FEST
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://inovabrahub.com.br/img/logo-hub_old.png">
+      <div>
+        <span class="text-white m-2 timeline">Timeline</span>
+        <span class="text-white m-2">Pitches</span>
+      </div>
+      <input type="text" class="form-control search-input text-white" placeholder="Buscar em todo o hub">
+      <div>
+        <i class="far fa-comment text-white fa-lg m-3"></i>
+        <i class="far fa-bell text-white fa-lg m-3"></i>
+        <i class="far fa-user text-white fa-lg m-3"></i>
+      </div>
+      <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </nav>
   </div>
 
-  <h5 class="text-white mt-2 mb-0 text-center"><i class="far fa-paper-plane fa-sm"></i> ESCREVA</h5>
-  <form class="form-posts pb-3">
-    <textarea class="add-post-input" placeholder="Compartilhe dicas e experiências"></textarea>
-    <button type="button" class="btn text-white font-weight-bold ml-auto mt-2 add-posts">Postar</button>
-    <input type="file" onchange="readImage(this)" id="image" accept="image/gif, image/jpeg, image/png"/>
-  </form>
-  <div class="newsfeed-options m-auto">
-    <h5 class="text-white text-center"><i class="far fa-paper-plane fa-sm"></i> NEWSFEED</h5>
+  <section class="d-flex flex-wrap justify-content-center">
+    <div class="m-3 user-box">
+      <img src="images/thumb.png" class="m-auto"/>
+      <br/>
+      Bem vindo(a), <span class="name text-dark text-center"></span>
+    </div>
+
+    <div class="m-3 posts-section">
+      <textarea class="add-post-input" placeholder="Escreva uma postagem"></textarea>
+      <button type="button" class="btn font-weight-bold mt-2 add-posts">Postar</button>
+      <button type="button" class="btn font-weight-bold mt-2 add-image" data-toggle="modal" data-target="#imageModal">Enviar imagem</button>
+    </div>
+
+    <img src="images/newadds.png" class="m-3" height="548px"/>
+  </section>
+
+  <!-- Images Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Postar imagem</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="file" onchange="readImage(this)" id="image" accept="image/gif, image/jpeg, image/png"/>
+          <div class="modal-image"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn post-image">Postar</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="posts-list d-flex flex-column w-100 justify-content-center mt-2"></div>
+
+  <!-- Alert Modal Textos -->
+  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Falha na Postagem</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Sua mensagem pode conter conteúdo ofensivo/inapropriado segundo nossas Políticas de Privacidade.
+        </div>
+        <div class="modal-footer">
+          <a target="_blank" href="https://www.bradescoseguranca.com.br/html/seguranca_corporativa/pf/seguranca-da-informacao/privacidade.shtm"><button type="button" class="btn btn-dissmiss font-weight-bold">Ver nossas Políticas</button></a>
+          <button type="button" class="btn btn-secondary btn-dissmiss font-weight-bold" data-dismiss="modal">Sair</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
   <script src="posts.js"></script> 
   <script src="filter.js"></script> 
+  <script src="mailgun.js"></script> 
 </body>
 </html>
